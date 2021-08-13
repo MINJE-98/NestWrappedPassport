@@ -18,11 +18,12 @@ export class AuthController {
     res.redirect("http://localhost:8080");
   }
   @Get("status")
+  @UseGuards(AuthenticatedGuard)
   status(@Req() req) {
-    console.log(req.user);
     return req.user;
   }
   @Get("logout")
+  @UseGuards(AuthenticatedGuard)
   logout(@Req() req, @Res() res) {
     req.session.destroy((err) => {
       if (err) {

@@ -7,8 +7,8 @@ import { AuthService } from "../auth.service";
 export class GithubStrategy extends PassportStrategy(Strategy, "github") {
   constructor(private authService: AuthService) {
     super({
-      clientID: "4281269a80de84b63747", // 1
-      clientSecret: "ac4b792a8d8adf491fb282e45eb12aec9fd46eaf",
+      clientID: "",
+      clientSecret: "",
       callbackURL: "http://localhost:3000/auth/github/callback",
       scope: ["name", "profile"],
     });
