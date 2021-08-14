@@ -15,7 +15,7 @@ export class AuthController {
   @Get("github/callback")
   @UseGuards(GithubGuard)
   callback(@Res() res) {
-    res.redirect("http://localhost:8080");
+    res.redirect(process.env.CILENT_URL);
   }
   @Get("status")
   @UseGuards(AuthenticatedGuard)
@@ -29,7 +29,7 @@ export class AuthController {
       if (err) {
         return console.log(err);
       }
-      res.redirect("http://localhost:8080/");
+      res.redirect(process.env.CILENT_URL);
     });
   }
 }

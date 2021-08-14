@@ -7,13 +7,12 @@ import { AuthService } from "../auth.service";
 export class GithubStrategy extends PassportStrategy(Strategy, "github") {
   constructor(private authService: AuthService) {
     super({
-      clientID: "",
-      clientSecret: "",
-      callbackURL: "http://localhost:3000/auth/github/callback",
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+      callbackURL: process.env.CALLBACK_URL,
       scope: ["name", "profile"],
     });
   }
-
   // callback 이후
   async validate(
     accessToken: string,
@@ -22,7 +21,6 @@ export class GithubStrategy extends PassportStrategy(Strategy, "github") {
     done: VerifyCallback
   ): Promise<any> {
     const { nodeId, username, profileUrl, provider } = profile;
-    console.log("callback");
     const user = {
       nodeId,
       username,
