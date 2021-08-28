@@ -1,7 +1,5 @@
 `@nestjs/passport` 사용해 NestJS에서 Passport를 구현해보았습니다.
 
-
-
 # 소개
 
 Passport는 각 응용 프로그램에 고유한 인증 요구 사항이 있음을 인식합니다. 
@@ -131,7 +129,7 @@ Nest에서는 가드를 사용하여 인증을 구현합니다.
 
 인증이 실패하면 `401 notfound`상태로 응답합니다.
 
-요청한 사용자의 인증상태를 리턴해줍니다.
+요청한 사용자의 인증상태를 반환해줍니다.
 
 ```jsx
 export class GithubGuard extends AuthGuard("github") {
