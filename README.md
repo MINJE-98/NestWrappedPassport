@@ -4,13 +4,9 @@
 
 # 설치
 
----
-
 `@nestjs/passport` NestJS로 레핑되어있는 passport를 설치한다.
 
 # 미들웨어(middleware)
-
----
 
 Express에서 한 것 처럼 Main.ts에 Passport를 사용하기 위해 `app.use(passport.initialize());`를 추가해야한다.
 
@@ -47,8 +43,6 @@ app.use(passport.session());
 ```
 
 # 인증(Authenication)
-
----
 
 NestJS에서는 AuthGuard에 확장할 전략을 매개변수로 주어 전략을 생성할 수 있다. 
 
@@ -115,8 +109,6 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
 
 # 세션(Session)
 
----
-
 PassportSerializer를 확장하여 sessionSerializer를 구현한다.
 
 ```tsx
@@ -146,8 +138,6 @@ export class SessionSerializer extends PassportSerializer {
 ```
 
 # 인가(Authorization)
-
----
 
 Nestjs에서는 req.isAuthenticated()를 Guard로 구현한다.
 
