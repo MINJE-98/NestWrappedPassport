@@ -12,6 +12,7 @@ Express에서 한 것 처럼 Main.ts에 Passport를 사용하기 위해 `app.use
 
 또한 세션을 사용할 경우 `app.use(passport.session());`미들웨어도 사용합니다.
 
+## 
 ```tsx
 // Connect Local Redis
 const client = redis.createClient({ url: `redis://${REDIS_HOST}:${REDIS_PORT}` });
@@ -65,8 +66,6 @@ export class GithubGuard extends AuthGuard('github') {
 ```
 
 # 전략(Strategy)
-
----
 
 NestJS에서 PassportStrategy를 확장하여 전략을 구현할 수 있다.
 
